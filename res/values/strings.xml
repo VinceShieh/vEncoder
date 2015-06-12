@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">mEncoder</string>
+    <string name="input_width">input width</string>
+    <string name="input_height">input height</string>
+
+    
+    <string-array name="encoding_rate">
+        <item>30fps</item>
+        <item>60fps</item>
+        <item>120fps</item>
+    </string-array>
+    <string-array name="color_format">
+        <item>YUV420Planar</item>
+        <item>YUV420PackedPlanar</item>
+        <item>YUV420SemiPlanar</item>
+        <item>YUV420PackedSemiPlanar</item>
+    </string-array>
+    <string-array name="CODEC">
+        <item>AVC</item>
+        <item>VP8</item>
+        <item>H263</item>
+    </string-array>
+    
+        <string-array name="dump">
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
+</resources>

@@ -1,0 +1,242 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.testencoder.MainActivity$PlaceholderFragment" >
+
+	  <TextView
+        android:id="@+id/tv_w"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+     	android:layout_alignBaseline="@+id/et_w"
+	       
+        android:layout_alignParentLeft="true"
+        android:text="Width:" />
+       <TextView
+        android:id="@+id/tv_h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+     	android:layout_alignBaseline="@+id/et_h"
+	    
+        android:layout_below="@id/tv_w"
+        android:layout_alignParentLeft="true"
+        android:text="Height:" /> 
+    <TextView
+        android:id="@+id/tv_frameNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+     	android:layout_alignBaseline="@+id/frame_num"
+	    android:layout_alignTop="@id/frame_num"
+        android:layout_below="@id/tv_h"
+        android:layout_alignParentLeft="true"
+        android:text="Frame Number:" />        
+  <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+     	android:layout_alignBaseline="@+id/et_time"
+	    android:layout_alignTop="@id/et_time"
+        android:layout_below="@id/tv_frameNum"
+        android:layout_alignParentLeft="true"
+        android:text="Encoding time:" />                  
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+		android:layout_alignBaseline="@+id/spinner2"
+		android:text="Rate:" />
+    <TextView
+        android:id="@+id/separator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btnFile"
+		android:text="======================Encoding Parameters===================" />
+	<TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignBaseline="@+id/spinner1"
+        android:text="CODEC:"
+        
+         />
+
+  
+    <Spinner
+        android:id="@id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/CODEC"
+    	android:layout_toRightOf="@id/tv1"
+    	android:layout_below="@id/separator">
+		    
+       </Spinner>
+   <Spinner
+        android:id="@+id/spin_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner1"/>
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_time"
+        android:layout_toRightOf="@id/tv2"
+        android:entries="@array/encoding_rate"
+         />
+    <Spinner
+        android:id="@+id/spinner_dump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/dump"
+    	android:layout_toRightOf="@+id/tv_dump"
+    	android:layout_below="@+id/separator2">
+		    
+       </Spinner>
+    <TextView
+        android:id="@+id/tv_framerate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+     	android:layout_alignBaseline="@+id/et_framerate"
+	    android:layout_alignTop="@id/et_framerate"
+        android:layout_below="@id/spin_color"
+        android:layout_alignParentLeft="true"
+        android:text="KEY_FRAME_RATE:" /> 
+        
+        <TextView
+        android:id="@+id/tv_bitrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+     	android:layout_alignBaseline="@+id/et_bitrate"
+	    android:layout_alignTop="@id/et_bitrate"
+        android:layout_below="@id/tv_framerate"
+        android:layout_alignParentLeft="true"
+        android:text="KEY_BIT_RATE:" /> 
+        
+        <TextView
+        android:id="@+id/tv_gop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+     	android:layout_alignBaseline="@+id/et_gop"
+	    android:layout_alignTop="@id/et_gop"
+        android:layout_below="@id/tv_bitrate"
+        android:layout_alignParentLeft="true"
+        android:text="KEY_I_FRAME_INTERVAL:" /> 
+        <TextView
+        android:id="@id/tv_dump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+     	android:layout_alignBaseline="@+id/spinner_dump"
+	    android:layout_alignTop="@id/spinner_dump"
+        android:layout_below="@+id/speparator2"
+        android:layout_alignParentLeft="true"
+        android:text="Dump Encoder output?" /> 
+    <ProgressBar
+        android:id="@+id/mprogressBar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" 
+        style="?android:attr/progressBarStyleHorizontal" 
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+    />
+       <EditText
+           android:id="@id/et_w"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:hint="input width"
+ 			android:layout_alignParentTop="true"
+         android:layout_toRightOf="@id/tv_w"
+           android:inputType="number"
+           />
+       <EditText
+           android:id="@id/et_h"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:hint="input height"
+           android:layout_below="@id/et_w"
+	       
+        android:layout_toRightOf="@id/tv_h"
+           android:inputType="number"
+           />
+    <EditText
+           android:id="@id/frame_num"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:hint="input encoding frame number"
+           android:layout_below="@id/et_h"
+           android:layout_toRightOf="@id/tv_frameNum"
+           android:inputType="number"
+           />
+        <EditText
+           android:id="@id/et_time"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/frame_num"
+           android:hint="input encoding time(seconds)"
+           android:layout_toRightOf="@id/tv_time"
+           android:inputType="number"
+           />
+            <EditText
+           android:id="@id/et_framerate"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:hint="30 fps"
+           android:layout_below="@id/spin_color"
+           android:layout_toRightOf="@id/tv_framerate"
+           android:inputType="number"
+           />
+                <EditText
+           android:id="@id/et_bitrate"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:hint="2000000 bps"
+           android:layout_below="@id/et_framerate"
+           android:layout_toRightOf="@id/tv_bitrate"
+           android:inputType="number"
+           />
+                    <EditText
+           android:id="@id/et_gop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:hint="30"
+           android:layout_below="@id/et_bitrate"
+           android:layout_toRightOf="@id/tv_gop"
+           android:inputType="number"
+           />
+<TextView
+        android:id="@id/separator2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+        android:layout_below="@id/et_gop"
+		android:text="=========================================================" />
+ 
+        <Button
+        android:id="@id/btnFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open File" 
+        android:layout_below="@id/spinner2"
+        android:layout_alignParentLeft="true"/>
+            <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Encode" 
+        android:layout_below="@id/spinner_dump"
+        android:layout_alignParentLeft="true"/>
+     <ProgressBar 
+         android:id="@+id/circleProgressBar"  
+         style="@android:style/Widget.ProgressBar.Large"
+         android:layout_width="wrap_content" 
+         android:layout_height="wrap_content"
+         android:visibility="gone"
+         android:layout_centerInParent="true"
+                  
+         />
+
+</RelativeLayout>
